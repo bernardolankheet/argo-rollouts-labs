@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: blue-green-preview.bernardolankheet.com.br
+  - host: app-preview.bernardolankheet.com.br
     http:
       paths:
       - path: /
