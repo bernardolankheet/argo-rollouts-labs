@@ -18,6 +18,6 @@ spec:
       containers:
       - name: app-container
         # Imagem com a versão blue - green
-        image: bernardolankheet/lab-blue-green:green
+        image: bernardolankheet/lab-blue-green:blue
         ports:
         - containerPort: 80
