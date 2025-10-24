@@ -22,6 +22,6 @@ spec:
       containers:
       - name: app-container
         # Imagem com a versão blue - green
-        image: bernardolankheet/lab-blue-green:treinamento
+        image: bernardolankheet/lab-blue-green:blue
         ports:
         - containerPort: 80
