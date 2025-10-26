@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - blue-green-deploy.yaml
-- bluegreen-preview-ingress.yaml
+#- bluegreen-preview-ingress.yaml
 - bluegreen-service.yaml
-- bluegreen-preview-service.yaml
+#- bluegreen-preview-service.yaml
 - bluegreen-ingress.yaml
