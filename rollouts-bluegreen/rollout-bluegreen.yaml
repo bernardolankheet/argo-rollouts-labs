@@ -26,4 +26,4 @@ spec:
       activeService: web-color-active
       previewService: web-color-preview
       autoPromotionEnabled: false
-      scaleDownDelaySeconds: 30
+      scaleDownDelaySeconds: 2
