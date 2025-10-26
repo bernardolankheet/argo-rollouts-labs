@@ -1,11 +1,11 @@
 ##  O objeto Rollout é uma Custom Resource Definition (CRD) que substitui o objeto Deployment nativo do Kubernetes quando precisamos de estratégias avançadas.
 ## No Rollout, definimos a estratégia (strategy) como blueGreen e referenciamos os dois serviços que acabamos de criar.
 apiVersion: apps/v1
-kind: Deployment
+kind: Rollout
 metadata:
   name: web-color-rollout
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: web-color
@@ -21,24 +21,8 @@ spec:
         image: bernardolankheet/lab-blue-green:blue
         ports:
         - containerPort: 80
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: web-color-preview
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: web-color
-  template:
-    metadata:
-      labels:
-        app: web-color
-        version: green
-    spec:
-      containers:
-      - name: app-container-green
-        image: bernardolankheet/lab-blue-green:green
-        ports:
-        - containerPort: 80
+  strategy:
+    blueGreen:
+      activeService: web-color-active
+      previewService: web-color-preview
+      autoPromotionEnabled: false
