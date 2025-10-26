@@ -9,7 +9,6 @@ metadata:
     app: web-color
 spec:
   type: ClusterIP
-  # O Argo Rollouts gerencia dinamicamente os selectors durante o processo de blue-green deployment
   selector:
     app: web-color
   ports:
