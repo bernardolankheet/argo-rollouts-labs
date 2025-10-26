@@ -35,7 +35,7 @@ spec:
     metadata:
       labels:
         app: web-color
-        version: blue
+        version: green
     spec:
       containers:
       - name: app-container-green
