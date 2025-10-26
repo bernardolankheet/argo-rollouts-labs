@@ -6,4 +6,4 @@ resources:
 - service-bluegreen-active.yaml
 - service-bluegreen-preview.yaml
 - ingress-bluegreen.yaml
-#- bluegreen-preview-ingress.yaml
+#- ingress-bluegreen-preview.yaml
