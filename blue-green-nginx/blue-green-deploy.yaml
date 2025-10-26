@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: web-color-rollout
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: web-color
@@ -27,7 +27,7 @@ kind: Deployment
 metadata:
   name: web-color-preview
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: web-color
