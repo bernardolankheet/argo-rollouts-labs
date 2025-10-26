@@ -2,8 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- blue-green-deploy.yaml
-#- bluegreen-preview-ingress.yaml
-- bluegreen-service.yaml
-#- bluegreen-preview-service.yaml
-- bluegreen-ingress.yaml
+- deploy-bluegreen.yaml
+- service-bluegreen.yaml
+- ingress-bluegreen.yaml
