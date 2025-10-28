@@ -21,10 +21,10 @@ spec:
         image: bernardolankheet/lab-blue-green:green
         ports:
         - containerPort: 80
-#  strategy:
-#    type: Recreate
   strategy:
-    type: RollingUpdate
-  rollingUpdate:
-    maxUnavailable: 0
-    maxSurge: 1
+    type: Recreate
+#  strategy:
+#    type: RollingUpdate
+#  rollingUpdate:
+#    maxUnavailable: 0
+#    maxSurge: 1
