@@ -1,6 +1,6 @@
 # 1. Serviço Ativo (web-color-active)
 # Este serviço recebe o tráfego ativo e aponta para a versão estável do aplicativo.
-# O Rollout atualizará o seletor para apontar para a versão estável (Blue/Green)
+# O Rollout atualizará o seletor para apontar para a versão estável canary
 apiVersion: v1
 kind: Service
 metadata:
