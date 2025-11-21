@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-color-rollout
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-color
+  template:
+    metadata:
+      labels:
+        app: web-color
+        version: blue
+    spec:
+      containers:
+      - name: app-container-blue
+        image: bernardolankheet/lab-blue-green:blue
+        ports:
+        - containerPort: 80

@@ -1,0 +1,18 @@
+# 1. Serviço Ativo (web-color-active)
+# Este serviço recebe o tráfego de produção
+# O Rollout atualizará o seletor para apontar para a versão estável (Blue/Green)
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-color-active
+  labels:
+    app: web-color
+spec:
+  type: ClusterIP
+  # O Argo Rollouts gerencia dinamicamente os selectors durante o processo de blue-green deployment
+  selector:
+    app: web-color  
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

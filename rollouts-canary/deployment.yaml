@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-color
+  template:
+    metadata:
+      labels:
+        app: web-color
+    spec:
+      containers:
+      - name: app-container
+        image: bernardolankheet/app:v1
+        ports:
+        - containerPort: 80

@@ -1,0 +1,17 @@
+# 2. Serviço de Preview (web-color-preview)
+# Este serviço recebe o tráfego de teste (nova versão)
+# O Rollout atualizará o seletor para apontar para a nova versão (Green)
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-color-preview
+  labels:
+    app: web-color
+spec:
+  type: ClusterIP
+  selector:
+    app: web-color
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

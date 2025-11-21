@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: rollout-blue-green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-color
+  template:
+    metadata:
+      labels:
+        app: web-color
+        version: blue
+    spec:
+      containers:
+      - name: app-container-blue
+        image: bernardolankheet/lab-blue-green:blue
+        ports:
+        - containerPort: 80
+  strategy:
+    blueGreen:
+      activeService: web-color-active
+      previewService: web-color-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 2

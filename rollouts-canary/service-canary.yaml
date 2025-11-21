@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-color
+  labels:
+    app: web-color
+spec:
+  type: ClusterIP
+  selector:
+    app: web-color
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

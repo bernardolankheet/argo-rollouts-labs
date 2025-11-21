@@ -1,0 +1,17 @@
+# 1. Serviço Ativo (web-color-active)
+# Este serviço recebe o tráfego ativo e aponta para a versão estável do aplicativo.
+# O Rollout atualizará o seletor para apontar para a versão estável (Blue/Green)
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-color-active
+  labels:
+    app: web-color
+spec:
+  type: ClusterIP
+  selector:
+    app: web-color  
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
